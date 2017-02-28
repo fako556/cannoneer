@@ -1,0 +1,1 @@
+call Run.cmd r 1000 4 5 30000 50000 1 2 3 4 rovny1metr.ter
