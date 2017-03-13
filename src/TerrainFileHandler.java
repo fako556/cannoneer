@@ -1,4 +1,7 @@
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Arrays;
 
 /**
@@ -12,17 +15,28 @@ public class TerrainFileHandler {
     int targetX, targetY;
     String name;
 
-    String url = "vzoroveTereny/terrain257x257.ter";
+
 
     public void loadTerFile(String fileName){
         try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(new BufferedInputStream(new FileInputStream(new File(url)))));
+            DataInputStream input = new DataInputStream(new FileInputStream(fileName));
+            columns = input.readInt();
+            rows = input.readInt();
+            deltaX = input.readInt();
+            deltaY = input.readInt();
+            shooterX = input.readInt();
+            shooterY = input.readInt();
+            targetX = input.readInt();
+            targetY = input.readInt();
 
 
         }
 
         catch (FileNotFoundException e){
 
+        }
+        catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
