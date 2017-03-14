@@ -29,6 +29,15 @@ public class TerrainFileHandler {
             targetX = input.readInt();
             targetY = input.readInt();
 
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < columns; j++) {
+                    int h = input.readInt();
+                    //System.out.println(h);
+                    terrain[i][j]= h;
+                    System.out.println(terrain[0][0]);
+                }
+            }
+
 
         }
 
