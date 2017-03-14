@@ -29,14 +29,19 @@ public class TerrainFileHandler {
             targetX = input.readInt();
             targetY = input.readInt();
 
-            for (int i = 0; i < rows; i++) {
-                for (int j = 0; j < columns; j++) {
-                    int h = input.readInt();
+            shooterX *=deltaX;
+            shooterY *=deltaY;
+
+            targetX *=deltaX;
+            targetY *=deltaY;
+          /*  for (int i = 0; i < rows; ++i) {
+                for (int j = 0; j < columns; ++j) {
+                    double h = input.readDouble();
                     //System.out.println(h);
-                    terrain[i][j]= h;
-                    System.out.println(terrain[0][0]);
+                    terrain[i][j] = (int)h;
+                    System.out.println(terrain[i][j]);
                 }
-            }
+            }*/
 
 
         }
@@ -48,6 +53,7 @@ public class TerrainFileHandler {
             e.printStackTrace();
         }
     }
+
 
     public String printData() {
         return "TerrainFileHandler{" +
